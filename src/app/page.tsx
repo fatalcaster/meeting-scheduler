@@ -1,4 +1,4 @@
-import { BellIcon, CalendarIcon, MoveUpRightIcon } from "lucide-react";
+import { BellIcon, CalendarIcon, MoveLeftIcon, MoveUpRightIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { ScrollableDiv } from "./ScrollableDiv";
@@ -90,7 +90,7 @@ function MeetingTimeline() {
 }
 export default function Home() {
   return (
-    <main className="flex min-h-screen bg-black  flex-col items-center justify-between py-6 px-3">
+    <main className="flex min-h-screen bg-black  flex-col items-center py-6 px-3 lg:px-16">
       <div className="flex items-center justify-between gap-2 w-full max-w-7xl">
         <Image
           src={"/logo.svg"}
@@ -109,6 +109,9 @@ export default function Home() {
             <Image alt="profile" src="/pfp.png" width={50} height={50} />
           </button>
         </div>
+      </div>
+      <div className="mt-10">
+        <button className="bg-white/10 rounded-full w-12 h-12 flex justify-center items-center text-white active:scale-95 hover:bg-white/20"><MoveLeftIcon /></button>
       </div>
     </main>
   );

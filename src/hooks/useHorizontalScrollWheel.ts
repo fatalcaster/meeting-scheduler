@@ -7,9 +7,12 @@ export function useHorizontalScrollWheel<T extends HTMLElement>() {
   const scrollValue = useRef(0);
   const handleScroll = (e: WheelEvent) => {
     if (!ref.current) return;
+
+    
+    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
     scrollValue.current = Math.max(
       Math.min(
-        scrollValue.current + e.deltaY,
+        scrollValue.current + delta,
         ref.current.scrollWidth - ref.current.clientWidth
       ),
       0
